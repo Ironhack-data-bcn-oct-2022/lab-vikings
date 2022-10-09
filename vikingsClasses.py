@@ -1,4 +1,4 @@
-from random import randint
+import random
 # Soldier
 
 
@@ -45,33 +45,33 @@ class Saxon (Soldier):
 
 
 class War ():
-    vikingArmy=[]
-    saxonArmy=[]
-    def random_index(self, army):
-        if army == "viking":
-            return randint(0,(len(self.vikingArmy)-1))
-        if army == "saxon":
-            return randint(0,(len(self.saxonArmy)-1))
+    def __init__(self):
+        self.vikingArmy=[]
+        self.saxonArmy=[]
     def addViking(self, viking):
         self.vikingArmy.append(viking)
     def addSaxon(self, saxon):
         self.saxonArmy.append(saxon)
     def vikingAttack(self):
-        viking_num = self.random_index("viking")
-        saxon_num = self.random_index("saxon")
-        self.saxonArmy[saxon_num].receiveDamage(self.vikingArmy[viking_num].strength)
-        if self.saxonArmy[saxon_num].health <= 0:
-            self.saxonArmy.pop(saxon_num)
+        viking = random.choice(self.vikingArmy)
+        saxon = random.choice(self.saxonArmy)
+        v_attack = saxon.receiveDamage(viking.strength)
+        for e in self.saxonArmy:
+            if e.health <= 0:
+                self.saxonArmy.remove(e)
+        return v_attack
     def saxonAttack(self):
-        viking_num = self.random_index("viking")
-        saxon_num = self.random_index("saxon")
-        self.vikingArmy[viking_num].receiveDamage(self.saxonArmy[saxon_num].strength)
-        if self.vikingArmy[viking_num].health <= 0:
-            self.vikingArmy.pop(viking_num)
+        viking = random.choice(self.vikingArmy)
+        saxon = random.choice(self.saxonArmy)
+        s_attack = viking.receiveDamage(saxon.strength)
+        for e in self.vikingArmy:
+            if e.health <= 0:
+                self.vikingArmy.remove(e)
+        return s_attack
     def showStatus(self):
-        if bool(self.saxonArmy)==False:
+        if not self.saxonArmy:
             return "Vikings have won the war of the century!"
-        elif bool(self.vikingArmy)==False:
+        elif not self.vikingArmy:
             return "Saxons have fought for their lives and survive another day..."
         else:
             return "Vikings and Saxons are still in the thick of battle."
