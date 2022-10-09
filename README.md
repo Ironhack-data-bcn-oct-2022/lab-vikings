@@ -28,9 +28,9 @@ Modify the file `vikingsClasses.py` so that all the tests are correct.
 
 ## Tests
 
-Best way to know how our code is doing is to work with tests. You will test the `vikingsClases.py` file step by step. 
+Best way to know how our code is doing is to work with tests. You will test the `vikingsClases.py` file step by step.
 
-You will **only** be **editing** the vikingsClasses.py. The files you will **running** to test your code are the following: 1-testsSoldier.py, 2-testsVikings.py, 3-testsSaxons.py & 4-testsWar.py, depending on how far you have written your code. 
+You will **only** be **editing** the vikingsClasses.py. The files you will **running** to test your code are the following: 1-testsSoldier.py, 2-testsVikings.py, 3-testsSaxons.py & 4-testsWar.py, depending on how far you have written your code.
 
 So, let's say you have already created the class for Soldiers.
 
@@ -313,10 +313,10 @@ Returns the current status of the `War` based on the size of the armies.
 - **if the `Viking` array is empty**, should return _**"Saxons have fought for their lives and survive another day..."**_
 - **if there are at least 1 `Viking` and 1 `Saxon`**, should return _**"Vikings and Saxons are still in the thick of battle."**_
 
-
 ## BONUS
 
 Create a game using the classes you defined. For this, you will need to:
+
 - Create a new `file.py`
 - Import the classes you defined earlier
 - Define functions to create the workflow of the game: i.e. functions to create teams (maybe you can create random teams with your classmates' names), run the game, etc.
